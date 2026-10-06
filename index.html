@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anders Thorin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 4rem 1rem;
+      background: #fff;
+      color: #222;
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 36rem; margin: 0 auto; }
+    header { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+    header img { height: 40px; width: auto; }
+    h1 { font-size: 1.25rem; font-weight: 500; margin: 0; }
+    h2 { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #777; margin: 0 0 1rem; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { padding: 0.5rem 0; border-top: 1px solid #eee; }
+    li:last-child { border-bottom: 1px solid #eee; }
+    a { color: #222; text-decoration: none; }
+    a:hover { color: #e4001b; }
+    li span { color: #777; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="cea-list.png" alt="CEA List">
+      <h1>Anders Thorin</h1>
+    </header>
+
+    <h2>Projets</h2>
+    <ul>
+      <!-- Un projet par ligne : lien vers sa page, puis une courte description facultative. -->
+      <li><a href="/clags/">CLaGS</a></li>
+      <li><a href="/ns-llnn/">NS LLNN</a></li>
+      <li><a href="/nn-fem-contact/">NN-FEM coupling through contact</a></li>
+    </ul>
+  </main>
+  <!-- Statistiques GoatCounter : remplace TONCODE par le code choisi sur goatcounter.com -->
+  <script data-goatcounter="https://TONCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    // Compte chaque clic sur un projet, sans rien ajouter aux liens.
+    document.querySelectorAll('main ul a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (window.goatcounter && goatcounter.count)
+          goatcounter.count({ path: 'clic' + a.getAttribute('href'), title: a.textContent, event: true });
+      });
+    });
+  </script>
+</body>
+</html>
